@@ -46,4 +46,35 @@ class User {
     public void displayUserDetails() {
         System.out.println("User ID: " + userID + ", Name: " + username + ", Role: " + role + ", Email: " + email + ", Phone: " + phoneNumber + ", Address: " + address + ", Active: " + (isActive ? "Yes" : "No"));
     }
+    // Add new user
+    public static void addUser(List<User> users, String username, String userID, String role, String email, String phoneNumber, String address, boolean isActive) {
+        User newUser = new User(username, userID, role, email, phoneNumber, address, isActive);
+        users.add(newUser);
+        System.out.println("New user added. User ID: " + userID);
+    }
+
+    // Remove user
+    public static void removeUser(List<User> users, String userID) {
+        for (User user : new ArrayList<>(users)) {
+            if (user.getUserID().equals(userID)) {
+                users.remove(user);
+                System.out.println("User: " + userID + " removed.");
+                return;
+            }
+        }
+        System.out.println("User not found.");
+    }
+
+    // Display all users
+    public static void displayUsers(List<User> users) {
+        if (users.isEmpty()) {
+            System.out.println("No users registered.");
+            return;
+        }
+        System.out.println("All registered users:");
+        for (User user : users) {
+            user.displayUserDetails();
+            System.out.println();
+        }
+    }
 }
