@@ -133,11 +133,11 @@ public class Main {
                     break;
 
                 case 12:
-
+                    manager.displayTasksByStatus("Ongoing");
                     break;
 
                 case 13:
-
+                    manager.displayTasksByStatus("Completed");
                     break;
 
                 case 14:
