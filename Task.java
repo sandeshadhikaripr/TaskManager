@@ -78,13 +78,15 @@ class Task {
     public void setStatus(String status) { 
         this.status = status; 
     }
-    
+
+    //Create tasks
     public static void createTask(List<Task> tasks, String taskID, String title, String description, Date startDate, Date endDate, String priority) {
         Task newTask = new Task(taskID, title, description, startDate, endDate, priority, null, "Pending");
         tasks.add(newTask);
         System.out.println("New task created. Task ID: " + taskID);
     }
-    
+
+    //Remove tasks
     public static void removeTask(List<Task> tasks, String taskID) {
         for (Task task : new ArrayList<>(tasks)) {
             if (task.getTaskID().equals(taskID)) {
@@ -95,7 +97,8 @@ class Task {
         }
         System.out.println("Task not found.");
     }
-    
+
+    //Display tasks
     public static void displayTasks(List<Task> tasks) {
         if (tasks.isEmpty()) {
             System.out.println("No tasks created.");
