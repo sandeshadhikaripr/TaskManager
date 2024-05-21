@@ -126,7 +126,9 @@ public class Main {
                     break;
 
                 case 10:
-
+                    System.out.print("Enter task ID to deallocate: ");
+                    taskID = scanner.nextLine();
+                    manager.deallocateTask(taskID);
                     break;
 
                 case 11:
