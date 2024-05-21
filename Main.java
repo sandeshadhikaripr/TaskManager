@@ -32,6 +32,23 @@ public class Main {
 
             switch (choice) {
                 case 1:
+                    System.out.print("Enter username: ");
+                    String username = scanner.nextLine();
+                    System.out.print("Enter user ID: ");
+                    String userID = scanner.nextLine();
+                    System.out.print("Enter role: ");
+                    String role = scanner.nextLine();
+                    System.out.print("Enter email: ");
+                    String email = scanner.nextLine();
+                    System.out.print("Enter phone number: ");
+                    String phoneNumber = scanner.nextLine();
+                    System.out.print("Enter address: ");
+                    String address = scanner.nextLine();
+                    System.out.print("Is active (true/false): ");
+                    boolean isActive = scanner.nextBoolean();
+                    scanner.nextLine(); // Consume newline
+                    manager.registerNewUser(username, userID, role, email, phoneNumber, address, isActive);
+                    break;
                     break;
 
                 case 2:
