@@ -132,6 +132,9 @@ public class Main {
                     break;
 
                 case 11:
+                    System.out.print("Enter task ID to complete: ");
+                    taskID = scanner.nextLine();
+                    manager.updateTaskStatus(taskID, "Completed");
                     break;
 
                 case 12:
