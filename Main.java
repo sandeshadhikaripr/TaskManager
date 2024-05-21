@@ -50,12 +50,31 @@ public class Main {
                     manager.registerNewUser(username, userID, role, email, phoneNumber, address, isActive);
                     break;
                 case 2:
+                    System.out.print("Enter user ID to remove: ");
+                    userID = scanner.nextLine();
+                    manager.removeUser(userID);
                     break;
-
                 case 3:
+                    manager.displayUsers();
                     break;
 
                 case 4:
+                    System.out.print("Enter user ID to update: ");
+                    userID = scanner.nextLine();
+                    System.out.print("Enter new username: ");
+                    username = scanner.nextLine();
+                    System.out.print("Enter new role: ");
+                    role = scanner.nextLine();
+                    System.out.print("Enter new email: ");
+                    email = scanner.nextLine();
+                    System.out.print("Enter new phone number: ");
+                    phoneNumber = scanner.nextLine();
+                    System.out.print("Enter new address: ");
+                    address = scanner.nextLine();
+                    System.out.print("Is active (true/false): ");
+                    isActive = scanner.nextBoolean();
+                    scanner.nextLine(); // Consume newline
+                    manager.updateUserDetails(userID, username, role, email, phoneNumber, address, isActive);
                     break;
 
                 case 5:
