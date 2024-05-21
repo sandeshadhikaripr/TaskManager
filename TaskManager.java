@@ -93,4 +93,17 @@ public class TaskManager {
         }
         System.out.println("Task not found.");
     }
+
+    public void displayTasksByStatus(String status) {
+        boolean found = false;
+        for (Task task : tasks) {
+            if (task.getStatus().equals(status)) {
+                task.displayTaskDetails();
+                found = true;
+            }
+        }
+        if (!found) {
+            System.out.println("No tasks with status: " + status);
+        }
+    }
 }
