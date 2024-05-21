@@ -78,4 +78,33 @@ class Task {
     public void setStatus(String status) { 
         this.status = status; 
     }
+    
+    public static void createTask(List<Task> tasks, String taskID, String title, String description, Date startDate, Date endDate, String priority) {
+        Task newTask = new Task(taskID, title, description, startDate, endDate, priority, null, "Pending");
+        tasks.add(newTask);
+        System.out.println("New task created. Task ID: " + taskID);
+    }
+    
+    public static void removeTask(List<Task> tasks, String taskID) {
+        for (Task task : new ArrayList<>(tasks)) {
+            if (task.getTaskID().equals(taskID)) {
+                tasks.remove(task);
+                System.out.println("Task: " + taskID + " removed.");
+                return;
+            }
+        }
+        System.out.println("Task not found.");
+    }
+    
+    public static void displayTasks(List<Task> tasks) {
+        if (tasks.isEmpty()) {
+            System.out.println("No tasks created.");
+            return;
+        }
+        System.out.println("All tasks:");
+        for (Task task : tasks) {
+            task.displayTaskDetails();
+            System.out.println();
+        }
+    }
 }
