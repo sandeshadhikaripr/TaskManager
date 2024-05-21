@@ -82,4 +82,15 @@ public class TaskManager {
         }
         System.out.println("Task not found.");
     }
+    
+    public void updateTaskStatus(String taskID, String status) {
+        for (Task task : tasks) {
+            if (task.getTaskID().equals(taskID)) {
+                task.setStatus(status);
+                System.out.println("Task " + taskID + " status updated to " + status);
+                return;
+            }
+        }
+        System.out.println("Task not found.");
+    }
 }
