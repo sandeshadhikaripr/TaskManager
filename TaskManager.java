@@ -52,4 +52,34 @@ public class TaskManager {
     public void displayTasks() {
         Task.displayTasks(tasks);
     }
+    
+    public void assignUserToTask(String taskID, String userID) {
+        for (Task task : tasks) {
+            if (task.getTaskID().equals(taskID)) {
+                for (User user : users) {
+                    if (user.getUserID().equals(userID)) {
+                        task.setAssignedUserID(userID);
+                        task.setStatus("Ongoing");
+                        System.out.println("Task " + taskID + " assigned to User ID: " + userID);
+                        return;
+                    }
+                }
+                System.out.println("User not found.");
+                return;
+            }
+        }
+        System.out.println("Task not found.");
+    }
+
+    public void deallocateTask(String taskID) {
+        for (Task task : tasks) {
+            if (task.getTaskID().equals(taskID)) {
+                task.setAssignedUserID(null);
+                task.setStatus("Pending");
+                System.out.println("Task " + taskID + " deallocated.");
+                return;
+            }
+        }
+        System.out.println("Task not found.");
+    }
 }
