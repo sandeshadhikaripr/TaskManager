@@ -110,9 +110,19 @@ public class Main {
                     break;
 
                 case 8:
+                    System.out.print("Enter task ID: ");
+                    taskID = scanner.nextLine();
+                    System.out.print("Enter user ID to assign: ");
+                    userID = scanner.nextLine();
+                    manager.assignUserToTask(taskID, userID);
                     break;
 
                 case 9:
+                    System.out.print("Enter task ID: ");
+                    taskID = scanner.nextLine();
+                    System.out.print("Enter new user ID to assign: ");
+                    userID = scanner.nextLine();
+                    manager.assignUserToTask(taskID, userID);
                     break;
 
                 case 10:
