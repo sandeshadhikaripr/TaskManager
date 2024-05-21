@@ -79,6 +79,17 @@ class Task {
         this.status = status; 
     }
 
+    public void displayTaskDetails() {
+        System.out.println("Task ID: " + taskID);
+        System.out.println("Title: " + title);
+        System.out.println("Description: " + description);
+        System.out.println("Start Date: " + startDate);
+        System.out.println("End Date: " + endDate);
+        System.out.println("Priority: " + priority);
+        System.out.println("Assigned User ID: " + (assignedUserID != null ? assignedUserID : "None"));
+        System.out.println("Status: " + status);
+    }
+    
     //Create tasks
     public static void createTask(List<Task> tasks, String taskID, String title, String description, Date startDate, Date endDate, String priority) {
         Task newTask = new Task(taskID, title, description, startDate, endDate, priority, null, "Pending");
