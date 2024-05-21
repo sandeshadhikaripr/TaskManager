@@ -78,9 +78,31 @@ public class Main {
                     break;
 
                 case 5:
+                    System.out.print("Enter task ID: ");
+                    String taskID = scanner.nextLine();
+                    System.out.print("Enter title: ");
+                    String title = scanner.nextLine();
+                    System.out.print("Enter description: ");
+                    String description = scanner.nextLine();
+                    System.out.print("Enter start date (dd-MM-yyyy): ");
+                    String startDateStr = scanner.nextLine();
+                    System.out.print("Enter end date (dd-MM-yyyy): ");
+                    String endDateStr = scanner.nextLine();
+                    System.out.print("Enter priority: ");
+                    String priority = scanner.nextLine();
+                    try {
+                        Date startDate = dateFormat.parse(startDateStr);
+                        Date endDate = dateFormat.parse(endDateStr);
+                        manager.createTask(taskID, title, description, startDate, endDate, priority);
+                    } catch (ParseException e) {
+                        System.out.println("Invalid date format. Please use dd-MM-yyyy.");
+                    }
                     break;
 
                 case 6:
+                    System.out.print("Enter task ID to remove: ");
+                    taskID = scanner.nextLine();
+                    manager.removeTask(taskID);
                     break;
 
                 case 7:
