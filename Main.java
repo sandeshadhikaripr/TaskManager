@@ -27,7 +27,7 @@ public class Main {
             System.out.println("13. View completed tasks");
             System.out.println("14. Exit");
             System.out.print("Choose an option: ");
-                    int choice = scanner.nextInt();
+            int choice = scanner.nextInt();
             scanner.nextLine(); // Consume newline
 
             switch (choice) {
@@ -106,6 +106,7 @@ public class Main {
                     break;
 
                 case 7:
+                    manager.displayTasks();
                     break;
 
                 case 8:
