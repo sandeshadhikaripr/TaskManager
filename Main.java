@@ -49,8 +49,6 @@ public class Main {
                     scanner.nextLine(); // Consume newline
                     manager.registerNewUser(username, userID, role, email, phoneNumber, address, isActive);
                     break;
-                    break;
-
                 case 2:
                     break;
 
