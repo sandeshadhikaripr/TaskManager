@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        TaskManager manager = new TaskManager();
+        TaskManager manager = TaskManager.getInstance();
         Scanner scanner = new Scanner(System.in);
         boolean exit = false;
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
@@ -27,6 +27,7 @@ public class Main {
             System.out.println("13. View completed tasks");
             System.out.println("14. Exit");
             System.out.print("Choose an option: ");
+
             int choice = scanner.nextInt();
             scanner.nextLine(); // Consume newline
 
@@ -49,11 +50,13 @@ public class Main {
                     scanner.nextLine(); // Consume newline
                     manager.registerNewUser(username, userID, role, email, phoneNumber, address, isActive);
                     break;
+
                 case 2:
                     System.out.print("Enter user ID to remove: ");
                     userID = scanner.nextLine();
                     manager.removeUser(userID);
                     break;
+
                 case 3:
                     manager.displayUsers();
                     break;
@@ -153,8 +156,8 @@ public class Main {
                 default:
                     System.out.println("Invalid choice. Please try again.");
             }
-        
         }
+
         scanner.close();
     }
 }
